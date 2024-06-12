@@ -147,3 +147,7 @@ url-shortener/
 ├── package-lock.json
 └── urlShortener-postman-collection.json
 ```
+
+## Postman Collection
+
+You can access the Postman collection for this API [here](https://documenter.getpostman.com/view/7496363/2sA3XPC31S).
