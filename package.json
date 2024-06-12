@@ -1,0 +1,15 @@
+{
+  "name": "indicina-url-shortener-challenge",
+  "version": "1.0.0",
+  "description": "Indicina URL Shortener Challenge API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "Ismail Hassan",
+  "license": "ISC"
+}
