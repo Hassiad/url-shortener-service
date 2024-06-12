@@ -4,7 +4,8 @@
   "description": "Indicina URL Shortener Challenge API",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "jest"
   },
   "keywords": [
     "url",
@@ -19,6 +20,7 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
+    "nodemon": "^3.1.3",
     "uuid": "^10.0.0",
     "xss-clean": "^0.1.4"
   },
