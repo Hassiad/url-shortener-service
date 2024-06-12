@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "URL Shortener API",
+    "description": "Collection for testing the URL Shortener API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Encode URL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"longUrl\": \"https://indicina.co\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/encode",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "encode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Decode URL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shortUrl\": \"http://short.est/GeAi9K\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/decode",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "decode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get URL Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/statistic/GeAi9K",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "statistic", "GeAi9K"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
