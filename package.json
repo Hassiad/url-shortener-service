@@ -1,5 +1,5 @@
 {
-  "name": "indicina-url-shortener-challenge",
+  "name": "url-shortener",
   "version": "1.0.0",
   "description": "Indicina URL Shortener Challenge API",
   "main": "server.js",
@@ -37,7 +37,8 @@
     "eslint-plugin-react": "^7.12.4",
     "parcel-bundler": "^1.12.3",
     "prettier": "^1.17.0"
-  },"engines": {
+  },
+  "engines": {
     "node": ">=16.0.0"
   }
 }
