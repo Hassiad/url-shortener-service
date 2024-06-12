@@ -1,6 +1,7 @@
 const urlStorage = require("../models/urlStorage");
 const { v4: uuidv4 } = require("uuid");
 const catchAsync = require("../utils/catchAsync");
+const { checkRequiredFields } = require("../utils/utilFunctions");
 
 const generateShortUrl = () => {
   return uuidv4().slice(0, 6);
@@ -8,6 +9,10 @@ const generateShortUrl = () => {
 
 exports.encode = catchAsync(async (req, res, next) => {
   const { longUrl } = req.body;
+
+  const requiredField = ["longUrl"];
+  checkRequiredFields(req, res, next, requiredField);
+
   const shortUrl = generateShortUrl();
 
   urlStorage.saveUrl(shortUrl, longUrl);
@@ -20,6 +25,10 @@ exports.encode = catchAsync(async (req, res, next) => {
 
 exports.decode = catchAsync(async (req, res, next) => {
   const { shortUrl } = req.body;
+
+  const requiredField = ["shortUrl"];
+  checkRequiredFields(req, res, next, requiredField);
+
   const urlPath = shortUrl.split("/").pop();
   const longUrl = urlStorage.getUrl(urlPath);
 
@@ -39,6 +48,11 @@ exports.decode = catchAsync(async (req, res, next) => {
 
 exports.statistics = catchAsync(async (req, res, next) => {
   const { urlPath } = req.params;
+
+  if (!urlPath) {
+    return next(new AppError(`Missing required field: urlPath`, 400));
+  }
+
   const stats = urlStorage.getStats(urlPath);
 
   if (stats) {
